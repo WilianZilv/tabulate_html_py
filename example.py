@@ -6,4 +6,7 @@ items = [
         ['Wilian', 21, 'Curitiba'],
         ]
 
-tabulate(items, headers, 'Desenvolvedores')
+document = tabulate(items, headers, 'Desenvolvedores')
+
+with open('index.html', 'w') as f:
+    f.write(document)

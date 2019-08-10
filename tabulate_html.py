@@ -9,11 +9,7 @@ def finish(child, title):
     head = node('head', node('title', title) + style)
     body = node('body', node('h2', title) + child)
     
-    document = '<!DOCTYPE html>'+node('html', head + body)
-    
-    with open('table.html', 'w') as f:
-        f.write(document)
-        f.close()
+    return '<!DOCTYPE html>'+node('html', head + body)
 
 def tabulate(items, headers, title):
     
@@ -22,4 +18,4 @@ def tabulate(items, headers, title):
     
     table = node('table', table_headers + table_items)
     
-    finish(table, title)
+    return finish(table, title)
