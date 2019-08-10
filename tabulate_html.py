@@ -5,8 +5,8 @@ def finish(child, title):
 
     with open('style.css', 'r') as f:
         style = node('style', f.read())
-
-    head = node('head', style)
+    
+    head = node('head', node('title', title) + style)
     body = node('body', node('h2', title) + child)
     
     document = '<!DOCTYPE html>'+node('html', head + body)
